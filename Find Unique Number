@@ -1,0 +1,24 @@
+// find unique number kata on Codewars
+
+function findUniq(arr) {
+  // one number will be different to others - but need to find a scaleable solution
+  // iterate for every value in an array - if there is a number that is different to the ones around it?
+  // ... but that would not catch cases where the odd number out is first or last number
+  
+  //first number use case
+  let firstNumber = arr[0]
+  if (firstNumber !== arr[1] && firstNumber !== arr[2]) {
+    return firstNumber;
+  }
+  //last number use case
+  let lastNumber = arr[arr.length - 1]
+  if (lastNumber !== arr[arr.length - 2] && lastNumber !== arr[arr.length - 3]){
+      return lastNumber;
+      }
+  // every other number use case
+  for (i = 1; i < (arr.length - 1); i++){
+    if (arr[i] !== arr[i - 1] && arr[i] !== arr[i + 1]){
+      return arr[i];
+    }
+  }
+}
